@@ -40,6 +40,12 @@ WHERE date = "2020-06-20" AND hour > "13:59:59";
 
 ## Selezionare tutti i corsi di laurea magistrale (38)
 
+```sql
+SELECT *
+FROM db_university.degrees
+WHERE level = "magistrale";
+```
+
 ## Da quanti dipartimenti è composta l'università? (12)
 
 ## Quanti sono gli insegnanti che non hanno un numero di telefono? (50)
