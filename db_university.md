@@ -102,8 +102,9 @@ GROUP BY office_address;
 ## Calcolare la media dei voti di ogni appello d'esame
 
 ```sql
-DELETE FROM `db_university`.`students`
-WHERE (`id` = '1001');
+SELECT SUM(vote) / COUNT(vote), exam_id
+FROM db_university.exam_student
+GROUP BY exam_id;
 ```
 
 ## Contare quanti corsi di laurea ci sono per ogni dipartimento
