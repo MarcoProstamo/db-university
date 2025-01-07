@@ -94,8 +94,9 @@ GROUP BY YEAR(enrolment_date);
 ## Contare gli insegnanti che hanno l'ufficio nello stesso edificio
 
 ```sql
-DELETE FROM `db_university`.`students`
-WHERE (`id` = '1001');
+SELECT COUNT(id), office_address
+FROM db_university.teachers
+GROUP BY office_address;
 ```
 
 ## Calcolare la media dei voti di ogni appello d'esame
