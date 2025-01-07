@@ -48,6 +48,11 @@ WHERE level = "magistrale";
 
 ## Da quanti dipartimenti è composta l'università? (12)
 
+```sql
+SELECT COUNT(*)
+FROM db_university.departments;
+```
+
 ## Quanti sono gli insegnanti che non hanno un numero di telefono? (50)
 
 ## Inserire nella tabella degli studenti un nuovo record con i propri dati (per il campo degree_id, inserire un valore casuale)
