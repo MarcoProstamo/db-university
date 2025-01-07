@@ -77,3 +77,9 @@ WHERE id = "58";
 ```
 
 ## Eliminare dalla tabella studenti il record creato precedentemente al punto 9
+
+```sql
+DELETE FROM `db_university`.`students`
+WHERE (`id` = '1001');
+
+```
