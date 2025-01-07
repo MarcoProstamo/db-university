@@ -55,7 +55,19 @@ FROM db_university.departments;
 
 ## Quanti sono gli insegnanti che non hanno un numero di telefono? (50)
 
+```sql
+SELECT COUNT(*)
+FROM db_university.teachers
+WHERE phone IS NULL;
+```
+
 ## Inserire nella tabella degli studenti un nuovo record con i propri dati (per il campo degree_id, inserire un valore casuale)
+
+```sql
+SELECT COUNT(*)
+FROM db_university.teachers
+WHERE phone IS NULL;
+```
 
 ## Cambiare il numero dell’ufficio del professor Pietro Rizzo in 126
 
