@@ -81,5 +81,33 @@ WHERE id = "58";
 ```sql
 DELETE FROM `db_university`.`students`
 WHERE (`id` = '1001');
+```
 
+## Contare quanti iscritti ci sono stati ogni anno
+
+```sql
+SELECT COUNT(id), YEAR(enrolment_date) AS enrolment_year
+FROM db_university.students
+GROUP BY YEAR(enrolment_date);
+```
+
+## Contare gli insegnanti che hanno l'ufficio nello stesso edificio
+
+```sql
+DELETE FROM `db_university`.`students`
+WHERE (`id` = '1001');
+```
+
+## Calcolare la media dei voti di ogni appello d'esame
+
+```sql
+DELETE FROM `db_university`.`students`
+WHERE (`id` = '1001');
+```
+
+## Contare quanti corsi di laurea ci sono per ogni dipartimento
+
+```sql
+DELETE FROM `db_university`.`students`
+WHERE (`id` = '1001');
 ```
