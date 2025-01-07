@@ -102,7 +102,7 @@ GROUP BY office_address;
 ## Calcolare la media dei voti di ogni appello d'esame
 
 ```sql
-SELECT SUM(vote) / COUNT(vote), exam_id
+SELECT exam_id, AVG(vote) AS average_vote
 FROM db_university.exam_student
 GROUP BY exam_id;
 ```
