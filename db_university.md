@@ -70,4 +70,10 @@ INSERT INTO `db_university`.`students` (`degree_id`, `name`, `surname`, `date_of
 
 ## Cambiare il numero dell’ufficio del professor Pietro Rizzo in 126
 
+```sql
+UPDATE db_university.teachers
+SET office_number = "126"
+WHERE id = "58";
+```
+
 ## Eliminare dalla tabella studenti il record creato precedentemente al punto 9
