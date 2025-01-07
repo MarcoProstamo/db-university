@@ -64,9 +64,8 @@ WHERE phone IS NULL;
 ## Inserire nella tabella degli studenti un nuovo record con i propri dati (per il campo degree_id, inserire un valore casuale)
 
 ```sql
-SELECT COUNT(*)
-FROM db_university.teachers
-WHERE phone IS NULL;
+INSERT INTO `db_university`.`students` (`degree_id`, `name`, `surname`, `date_of_birth`, `fiscal_code`, `enrolment_date`, `registration_number`, `email`) VALUES ('68', 'Marco', 'Prostamo', '1010-12-12', '12312QWQWE2334', '2022-22-22', '696969', 'clo23wn@gmail.com');
+
 ```
 
 ## Cambiare il numero dell’ufficio del professor Pietro Rizzo in 126
