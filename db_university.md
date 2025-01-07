@@ -110,6 +110,7 @@ GROUP BY exam_id;
 ## Contare quanti corsi di laurea ci sono per ogni dipartimento
 
 ```sql
-DELETE FROM `db_university`.`students`
-WHERE (`id` = '1001');
+SELECT department_id, COUNT(id) AS number_of_degrees
+FROM db_university.degrees
+GROUP BY department_id;
 ```
