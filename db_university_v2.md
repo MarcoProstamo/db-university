@@ -31,9 +31,13 @@ where t.id = "44";
 ## Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e nome
 
 ```sql
-SELECT *
-FROM db_university.students
-WHERE date_of_birth LIKE "1990-%-%";
+SELECT s.id s_id, s.name s_name, s.surname s_surname, s.registration_number s_registration_number, dg.id dg_id, dg.department_id dg_department_id, dg.name dg_name, dg.level dg_level, dg.address dg_address, dg.email dg_email, dg.website dg_website, dp.id dp_id, dp.name dp_name, dp.address dp_address, dp.phone dp_phone, dp.email dp_email, dp.website dp_website, dp.head_of_department dp_head_of_department
+FROM students s
+INNER JOIN degrees dg
+ON s.degree_id = dg.id
+INNER JOIN departments dp
+ON dg.department_id = dp.id
+ORDER BY s.surname, s.name
 ```
 
 ## Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
