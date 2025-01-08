@@ -43,9 +43,12 @@ ORDER BY s.surname, s.name
 ## Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
 
 ```sql
-SELECT *
-FROM db_university.students
-WHERE date_of_birth LIKE "1990-%-%";
+SELECT d.id d_id, d.name d_name, c.id c_id, c.name c_name, t.id t_id, t.name t_name, t.surname t_surname
+FROM degrees d
+INNER JOIN courses c
+ON d.id = c.degree_id
+INNER JOIN teachers t
+ON c.id = t.id;
 ```
 
 ## Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica (54)
