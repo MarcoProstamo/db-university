@@ -68,3 +68,26 @@ WHERE dp.id = "5"
 ```
 
 ## BONUS: Selezionare per ogni studente il numero di tentativi sostenuti per ogni esame, stampando anche il voto massimo. Successivamente, filtrare i tentativi con voto minimo 18.
+
+```sql
+SELECT
+    s.id as s_id,
+    s.name as s_name,
+    s.surname as s_surname,
+    e.course_id c_id,
+    COUNT(es.exam_id) as attempts,
+    MAX(es.vote) as max_vote
+FROM
+    students s
+INNER JOIN
+    exam_student es ON s.id = es.student_id
+INNER JOIN
+    exams e ON es.exam_id = e.id
+WHERE
+    es.vote >= 18
+GROUP BY
+    s.id, s.name, s.surname, e.course_id
+ORDER BY
+    s.id, e.course_id;
+
+```
