@@ -54,14 +54,16 @@ ON c.id = t.id;
 ## Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica (54)
 
 ```sql
-SELECT t.*
+SELECT DISTINCT t.*
 FROM departments dp
 INNER JOIN degrees dg
 ON dp.id = dg.department_id
 INNER JOIN courses c
 ON dg.id = c.degree_id
+INNER JOIN course_teacher ct
+ON c.id = ct.course_id
 INNER JOIN teachers t
-ON c.id = t.id
+ON ct.teacher_id = t.id
 WHERE dp.id = "5"
 ```
 
