@@ -54,9 +54,15 @@ ON c.id = t.id;
 ## Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica (54)
 
 ```sql
-SELECT *
-FROM db_university.students
-WHERE date_of_birth LIKE "1990-%-%";
+SELECT t.*
+FROM departments dp
+INNER JOIN degrees dg
+ON dp.id = dg.department_id
+INNER JOIN courses c
+ON dg.id = c.degree_id
+INNER JOIN teachers t
+ON c.id = t.id
+WHERE dp.id = "5"
 ```
 
 ## BONUS: Selezionare per ogni studente il numero di tentativi sostenuti per ogni esame, stampando anche il voto massimo. Successivamente, filtrare i tentativi con voto minimo 18.
